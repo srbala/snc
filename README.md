@@ -1,7 +1,7 @@
-# Single node cluster (snc) scripts for OpenShift 4 
+# Single node cluster (SNC) scripts for OpenShift 4 
 
 ## How to use?
-- Make sure the one time setup is satisfied. (https://github.com/openshift/installer/blob/master/docs/dev/libvirt/README.md#one-time-setup)
+- Make sure the one time system requirements setup is satisfied. (https://github.com/openshift/installer/blob/master/docs/dev/libvirt/README.md#one-time-setup)
 - Clone this repo `git clone https://github.com/code-ready/snc.git`
 - `cd <directory_to_cloned_repo>`
 - `./snc.sh`
@@ -24,7 +24,7 @@ $ kubectl get pods --all-namespaces
 ## Building SNC for OKD 4
 - Before running `./snc.sh`, you need to create a pull secret file, and set a couple of environment variables to override the default behavior.
 - Select the OKD 4 release that you want to build from: [https://origin-release.apps.ci.l2s4.p1.openshiftapps.com](https://origin-release.apps.ci.l2s4.p1.openshiftapps.com)
-- For example, to build release: 4.5.0-0.okd-2020-08-12-020541
+- For example, to build release: 4.6.0-0.okd-2021-01-23-132511
 
 ```bash
 # Create a pull secret file
@@ -34,7 +34,7 @@ cat << EOF > /tmp/pull_secret.json
 EOF
 
 # Set environment for OKD build
-export OKD_VERSION=4.5.0-0.okd-2020-08-12-020541
+export OKD_VERSION=4.6.0-0.okd-2021-01-23-132511
 export OPENSHIFT_PULL_SECRET_PATH="/tmp/pull_secret.json"
 
 # Build the Single Node cluster
